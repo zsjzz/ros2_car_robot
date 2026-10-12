@@ -91,6 +91,9 @@ def generate_launch_description():
 	branch_gazebo_robot = include_branch('gazebo_robot.launch.py', {
 		'spawn_z': spawn_z,
 	})
+	branch_laser = include_branch('gazebo_dev_laser.launch.py', {
+		'use_sim_time': use_sim_time,
+	})
 	branch_bridge = include_branch('bridge.launch.py')
 	branch_control = include_branch('control.launch.py')
 
@@ -118,5 +121,6 @@ def generate_launch_description():
 		branch_gazebo_robot,
 		branch_bridge,
 		branch_control,
+		branch_laser,
 		rviz_node,
 	])
